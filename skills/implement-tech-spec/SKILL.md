@@ -20,7 +20,8 @@ The argument `<project>` names the folder `docs/projects/<project>/`, which hold
 Read both documents. Done when you can list, in the plan's recommended order, every slice with
 its plan heading and the spec sections it covers; the plan's cross-cutting sections every slice
 needs (delivery constraints, decisions); and where the plan retires the spec. Also find, from `CLAUDE.md`, the README or the scripts folder:
-the base branch `<base>` PRs target (default: the repo's default branch), the full verification
+the base branch `<base>`: the mainline PRs target, which holds the plan's slices already done
+(check with `git branch --contains`; default: the repo's default branch), the full verification
 command `<verify>` and the docs check `<verify-docs>` (omit if none).
 
 ## 2. Create the worktree
@@ -95,7 +96,8 @@ Scope: slice <N> only. Later slices' work stays out: <what they will do>.
 Commits: small and self-contained, one kind each (feat / fix / refactor). Tests go in the
 commit with the code they test; refactor commits leave tests unchanged. Every commit builds and
 passes its tests, so a changed public port moves all its consumers in the same commit. Docs
-the change makes stale are updated in the same commit.
+the change makes stale are updated in the same commit. Once the slice is done, mark it done in the
+plan's status line, in a `docs` commit.
 
 TDD: for each feat/fix behaviour, write the test first and see it red: a real test run failing
 on its assertion (a compile error is not red). Then make it green.
