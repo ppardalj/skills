@@ -1,0 +1,14 @@
+{
+  "name": "ppardalj",
+  "description": "Pedro Pardal's Claude Code plugins.",
+  "owner": {
+    "name": "Pedro Pardal"
+  },
+  "plugins": [
+    {
+      "name": "skills",
+      "source": "./",
+      "description": "Personal Claude Code skills"
+    }
+  ]
+}
