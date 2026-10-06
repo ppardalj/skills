@@ -13,7 +13,7 @@ Each directory under `skills/` is a skill with its `SKILL.md`.
 
 ```bash
 claude plugin marketplace add ppardalj/skills
-claude plugin install skills@ppardalj --scope user
+claude plugin install ppardalj@ppardalj-skills --scope user
 ```
 
 This installs the plugin for your user, available in every project you open.
@@ -21,21 +21,21 @@ This installs the plugin for your user, available in every project you open.
 To pick up changes later:
 
 ```bash
-claude plugin marketplace update ppardalj
+claude plugin marketplace update ppardalj-skills
 ```
 
 To remove it:
 
 ```bash
-claude plugin uninstall skills@ppardalj
-claude plugin marketplace remove ppardalj
+claude plugin uninstall ppardalj@ppardalj-skills
+claude plugin marketplace remove ppardalj-skills
 ```
 
 ## Adding a skill
 
 Create a new directory under `skills/` with its `SKILL.md`, bump `version` in
 `.claude-plugin/plugin.json`, and push. Installed copies pick it up on the next
-`claude plugin marketplace update ppardalj`.
+`claude plugin marketplace update ppardalj-skills`.
 
 ## Secrets
 
