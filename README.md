@@ -18,10 +18,12 @@ claude plugin install ppardalj@ppardalj-skills --scope user
 
 This installs the plugin for your user, available in every project you open.
 
-To pick up changes later:
+To pick up changes later, refresh the marketplace and then update the installed
+plugin (the first alone only refreshes the catalog), and restart Claude Code:
 
 ```bash
 claude plugin marketplace update ppardalj-skills
+claude plugin update ppardalj@ppardalj-skills
 ```
 
 To remove it:
@@ -34,8 +36,8 @@ claude plugin marketplace remove ppardalj-skills
 ## Adding a skill
 
 Create a new directory under `skills/` with its `SKILL.md`, bump `version` in
-`.claude-plugin/plugin.json`, and push. Installed copies pick it up on the next
-`claude plugin marketplace update ppardalj-skills`.
+`.claude-plugin/plugin.json`, and push. Installed copies pick it up once they
+[pick up changes](#install-once-per-machine).
 
 ## Secrets
 
