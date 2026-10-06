@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "ppardalj",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Personal Claude Code skills: tech specs, vertical slices, retros, and architecture gap analysis.",
   "author": {
     "name": "Pedro Pardal",
