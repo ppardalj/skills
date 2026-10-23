@@ -23,7 +23,7 @@ Done when you can say in two sentences what the reviewer will see change and wha
 
 ## 2. Write the description
 
-Follow the sibling skill [show-me](../show-me/SKILL.md) for the visuals, keeping to what GitHub
+Invoke the `show-me` skill for the visuals, keeping to what GitHub
 renders: a `diff` of the call tree or flow, a table of cases, a short `text` block of a test's
 given/when/then, Mermaid. One or two visuals carry the summary; prose stays short. Sections, in
 order; drop the ones that would be empty except Merge Danger and Release steps:

@@ -1,7 +1,6 @@
 ---
 name: show-me
-description: Help the user understand the current topic visually with concise diagrams, code-shape sketches, and focused HTML artifacts.
-disable-model-invocation: true
+description: "Explain a topic visually with diagrams, code-shape sketches and focused HTML artifacts. Use when asked to show or visualise something, or when a call tree, diff, table or diagram would explain a change better than prose."
 ---
 
 Help the user understand the current topic of conversation visually. Skip the preamble and keep prose brief. Pick the smallest view that makes the key point clear.
