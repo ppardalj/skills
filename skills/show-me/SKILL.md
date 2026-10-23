@@ -43,7 +43,17 @@ src/
 └── transport/      # sends API requests
 ```
 
-- Show component interaction, control flow, or data flow with Mermaid:
+- Show component interaction, control flow, or data flow with an ASCII diagram when answering in the console, which renders plain text only:
+
+```text
+User                UI                  Daemon
+ |                   |                     |
+ |-- choose cmd ---->|                     |
+ |                   |-- expanded prompt ->|
+ |                   |<-- stream result ---|
+```
+
+  Use Mermaid only inside a file that is rendered later: a Markdown file, an HTML file, or a GitHub PR or issue body:
 
 ```mermaid
 sequenceDiagram
@@ -114,7 +124,7 @@ function expandSkill(command: string): string {
 }
 ```
 
-- For a visual UI, layout, state comparison, or concept too dense for Mermaid, write one focused HTML file — a diagram, an infographic, or a short slide deck, whichever fits the point. Match the product's colors, type, spacing, and components; use real labels and data; support desktop and mobile. Then open it for the user with the command for their platform:
+- For a visual UI, layout, state comparison, or concept too dense for a text diagram, write one focused HTML file — a diagram, an infographic, or a short slide deck, whichever fits the point. Match the product's colors, type, spacing, and components; use real labels and data; support desktop and mobile. Then open it for the user with the command for their platform:
 
 ```
 # macOS
