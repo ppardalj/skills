@@ -25,15 +25,20 @@ out, and `<base>`, `<verify>`, `<verify-docs>`.
 ## 2. Create the worktree
 
 Pick `<branch>` as `<type>/<slug>` (`feat`, `fix`, `refactor`, `test`, `docs`, `chore`), following
-the repo's recent branch names. Without `--base`, start from the fresh remote mainline:
+the repo's recent branch names. The worktree lives at `.claude/worktrees/<slug>` inside the main
+checkout; if `git check-ignore -q .claude/worktrees/x` fails, add `.claude/worktrees/` to
+`.git/info/exclude`. Without `--base`, start from the fresh remote mainline:
 
 ```sh
 git fetch origin <base>
-git worktree add -b <branch> ../"$(basename "$PWD")"-<slug> origin/<base>
+git worktree add -b <branch> .claude/worktrees/<slug> origin/<base>
 ```
 
 With `--base`, start from the local `<base>` as it stands (it holds the earlier slices):
-`git worktree add -b <branch> ../"$(basename "$PWD")"-<slug> <base>`.
+`git worktree add -b <branch> .claude/worktrees/<slug> <base>`.
+
+Run the repo's commands from the worktree the way its docs say for worktrees (search them for
+`worktree`): a shared dev container may otherwise run the main checkout's code.
 
 All work lands on `<branch>` in that worktree, with absolute paths in every command. This rule
 wins over any branch the plan names. The main checkout, every other branch and `git stash` stay
