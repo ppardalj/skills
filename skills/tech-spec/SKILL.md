@@ -113,6 +113,11 @@ Read with <links to the docs this spec changes or depends on>.
   the exception.
 - Every prior decision it reverses (a module `docs/` decision, an auth or contract doc, a PRD line) is
   listed under Decisions with a link.
-- The cost is counted: files, aggregates, migrations, new libraries.
+- The cost is counted: files, aggregates, migrations, new libraries. When the repo has a
+  prioritisation doc (impact × cost bands), the spec states the cost in its terms and the
+  impact it claims, with the evidence.
+- Rejected alternatives also name what the project will not do: the parts of the request or
+  the design that no requirement asks for, dropped on purpose, so a slice does not grow
+  them back.
 - Each design choice traces to a requirement in Goal or a Decision.
 - Domain terms are spelled as in the domain-language doc.

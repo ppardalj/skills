@@ -323,6 +323,8 @@ Every slice should:
 * introduce the minimum useful additional complexity
 * be independently implementable and verifiable
 * move the Current State materially toward the Target State
+* fit in one PR under the repo's size threshold when it states one (look for it in the repo's
+  prioritisation or engineering conventions doc); a slice that cannot is two slices
 
 A slice should normally be describable as a capability:
 
