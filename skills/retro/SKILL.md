@@ -22,7 +22,18 @@ The user has asked for a **retrospective**. You are suggesting improvements to t
 - **No-ops**: look for instructions in steering files that don't modify the agent's behavior. _Use when_ the steering files are large and unwieldy.
 - **Information access**: look for opportunities to increase the agent's access to information. Teeing dev server logs, readonly access to third-party services. _Use when_ a crucial piece of information was not available to the agent.
 
-4. Present these candidates to the user, in order of severity.
+4. Design a **remedy** for each candidate, walking the ladder in [Remedy types](#remedy-types) from the top and stopping at the first rung that would prevent the problem. Every candidate ends with one remedy type, and any remedy below architecture states in one line why the rungs above it don't work.
+
+5. Present the candidates to the user, labelled with their remedy type, in order of severity, breaking ties by ladder order.
+
+### Remedy types
+
+A ladder, most preferred first. An idea on a higher rung beats one on a lower rung.
+
+1. **Architecture**: make the failure unrepresentable by changing the code. If A and B are one piece, there is no integration between them left to cover.
+2. **Guardrail**: a hard limit the agent cannot step outside: a test, a metric check, a hook that always runs.
+3. **Tooling**: improve the tool economy: turn a procedure the agent improvised into a repeatable script, grow a repeatable script into a reusable framework, trim a tool's output for token efficiency.
+4. **Steering**: change docs, skills or `CLAUDE.md` so the agent behaves differently. A heuristic: it shifts behaviour without bounding it.
 
 ### Files
 
