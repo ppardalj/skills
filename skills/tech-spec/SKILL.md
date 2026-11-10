@@ -65,6 +65,9 @@ AskUserQuestion, recommended option first. Iterate until they confirm the design
 Done when every decision that would change the design is answered; the rest go to Open
 questions.
 
+When the repo has an ADR skill (`write-adr`), run its admission test on each answered decision
+and write a `proposed` ADR for every one that passes; the spec's Decisions section links it.
+
 ### 5. Write the spec
 
 Fill the skeleton below: drop the sections that don't apply, add the ones the design needs.

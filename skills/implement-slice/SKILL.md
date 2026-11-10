@@ -56,7 +56,8 @@ TDD: for each feat/fix behaviour, write the test first and see it **red**: a rea
 on its assertion (a compile error is not red). Then make it green.
 
 Resolve minor ambiguity with the conservative choice consistent with the spec, and list it under
-deviations. An ambiguity that changes behaviour the user cares about is a question for the user
+deviations. When the repo has an ADR skill (`write-adr`) and the work forces a decision the spec
+did not take that passes its admission test, write a `proposed` ADR and list it under deviations. An ambiguity that changes behaviour the user cares about is a question for the user
 (or `BLOCKED: REQUIREMENT_AMBIGUITY` to your caller), not a guess.
 
 Done when `<verify>` passes on the final commit. When verify fails for a cause outside the code
