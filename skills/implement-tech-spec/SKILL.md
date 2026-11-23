@@ -1,7 +1,7 @@
 ---
 name: implement-tech-spec
-description: "Implement a docs/projects tech spec slice by slice with implementer subagents, one stacked PR per slice."
-argument-hint: "<project>"
+description: "Implement a docs/projects tech spec, or a list of tracker tickets, slice by slice with implementer subagents, one stacked PR per slice."
+argument-hint: "<project> | <TICKET-KEY>..."
 disable-model-invocation: true
 ---
 
@@ -13,12 +13,20 @@ one slice at a time, carry each slice's hand-off notes into the next, check thei
 report to the user. A subagent's `BLOCKED: REQUIREMENT_AMBIGUITY` question goes to the user;
 resume that subagent with the answer through `SendMessage`.
 
-The argument `<project>` names the folder `docs/projects/<project>/`, which holds
-`tech-spec-<project>.md` and `implementation-plan.md`.
+The argument is either `<project>`, the folder `docs/projects/<project>/` that holds
+`tech-spec-<project>.md` and `implementation-plan.md`, or one or more ticket keys (`BNPL-154
+BNPL-156`) of the repo's issue tracker. With ticket keys there is no spec: each ticket is one
+slice and is its own spec.
 
 ## 1. Read the plan
 
-Read both documents. Done when you can list, in the plan's recommended order, every slice with
+**Ticket keys.** Read each ticket from the tracker (its MCP or API, as the repo's docs say): the
+description, the acceptance criteria, the technical details, the comments and the links. Order the
+slices by the tickets' **depends on** links, else as given. Each ticket stands in for a plan
+heading and its spec sections; there are no cross-cutting sections and no retirement. Then go on
+with the mainline check below.
+
+**Project.** Read both documents. Done when you can list, in the plan's recommended order, every slice with
 its plan heading and the spec sections it covers; the plan's cross-cutting sections every slice
 needs (delivery constraints, decisions); and where the plan retires the spec. Also find, from
 `CLAUDE.md`, the README or the scripts folder, the mainline `<mainline>` PRs target (default: the
@@ -50,7 +58,7 @@ Done when every slice reports verify green and has its PR open on the right base
 
 ## 3. Retire the spec
 
-Follow the plan's retirement step. When it is its own section rather than part of the last
+Skip with ticket keys. Otherwise, follow the plan's retirement step. When it is its own section rather than part of the last
 slice, add it to the last slice's prompt. Done when, on the last branch,
 `docs/projects/<project>/` keeps only what `docs/projects/README.md` lets a shipped project keep
 and the docs check passes.
@@ -79,3 +87,7 @@ Read first: in `docs/projects/<project>/implementation-plan.md`, "<slice heading
 Scope: slice <N> only. Later slices' work stays out: <what they will do>.
 <Last slice: also retire the spec as the plan's "<retirement heading>" says.>
 ```
+
+With ticket keys, the first line names the ticket instead: `Implement **<KEY> — <summary>** with
+the implement-slice skill`, and "Read first" is the ticket: its acceptance criteria are the scope,
+and each needs its red test at the level its How to verify names.
