@@ -14,8 +14,8 @@ report to the user. A subagent's `BLOCKED: REQUIREMENT_AMBIGUITY` question goes 
 resume that subagent with the answer through `SendMessage`.
 
 The argument is either `<project>`, the folder `docs/projects/<project>/` that holds
-`tech-spec-<project>.md` and `implementation-plan.md`, or one or more ticket keys (`BNPL-154
-BNPL-156`) of the repo's issue tracker. With ticket keys there is no spec: each ticket is one
+`tech-spec-<project>.md` and `implementation-plan.md`, or one or more ticket keys (`ABC-12
+ABC-15`) of the repo's issue tracker. With ticket keys there is no spec: each ticket is one
 slice and is its own spec.
 
 ## 1. Read the plan
