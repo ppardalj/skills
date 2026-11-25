@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "ppardalj",
-  "version": "0.5.0",
-  "description": "Personal Claude Code skills: tech specs, ADRs, vertical slices, slice implementation, PRs, retros, Figma extraction, and architecture gap analysis.",
+  "version": "0.6.0",
+  "description": "Personal Claude Code skills: tech specs, ADRs, issue writing and refinement, vertical slices, slice implementation, PRs, retros, Figma extraction, and architecture gap analysis.",
   "author": {
     "name": "Pedro Pardal",
     "email": "ppardalj@gmail.com"
